@@ -1,7 +1,7 @@
-Treść
+Wyszukiwanie w posortowanym ciągu.
 =====
 
-Twoim zadaniem jest wyszukiwanie podanych liczb w posortowanej tablicy. Otrzymasz listę n list w kolejności rosnącej oraz k pytań o pozycję liczby w tablicy, która została wcześniej podana (numerujemy od 1 do n). Jeśli wyszukiwany jest element nieistniejący w tablicy, to powinniśmy zwrócić wartość -1 pozycji. Jeśli liczba występuje wielokrotnie, to należy zwrócić tę, która znajduje się najbliżej początku tablicy.
+Twoim zadaniem jest wyszukiwanie podanych liczb w posortowanej tablicy. Otrzymasz listę n liczb w kolejności rosnącej oraz k pytań o pozycję liczby w tablicy, która została wcześniej podana (numerujemy od 1 do n). Jeśli wyszukiwany jest element nieistniejący w tablicy, to powinniśmy zwrócić wartość -1 pozycji. Jeśli liczba występuje wielokrotnie, to należy zwrócić tę, która znajduje się najbliżej początku tablicy.
 
 Wejście
 =======
