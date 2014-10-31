@@ -1,9 +1,9 @@
 Wyszukiwanie w posortowanym, przesuniętym cyklicznie ciągu.
 =====
 
-Twoim zadaniem jest wyszukiwanie podanych liczb w posortowanej tablicy, która została przesunięta cyklicznie. To znaczy, że orginalny ciąg liczb został odcięty w pewnym momencie i zamieniony miejscami. W szczególności orginalny ciąg jest również swoim przesunięciem cyklicznym.
+Twoim zadaniem jest wyszukiwanie podanych liczb w posortowanej tablicy, która została przesunięta cyklicznie. To znaczy, że oryginalny ciąg liczb został odcięty w pewnym momencie i zamieniony miejscami. W szczególności oryginalny ciąg jest również swoim przesunięciem cyklicznym.
 
-Otrzymasz listę n list w kolejności rosnącej oraz k pytań o pozycję liczby w tablicy, która została wcześniej podana (numerujemy od 1 do n). Jeśli wyszukiwany jest element nieistniejący w tablicy, to powinniśmy zwrócić wartość -1 pozycji. Jeśli liczba występuje wielokrotnie, to należy zwrócić tę, która znajduje się najbliżej początku orginalnej tablicy bez przesunięcia cyklicznego.
+Otrzymasz listę n list w kolejności rosnącej oraz k pytań o pozycję liczby w tablicy, która została wcześniej podana (numerujemy od 1 do n). Jeśli wyszukiwany jest element nieistniejący w tablicy, to powinniśmy zwrócić wartość -1 pozycji. Jeśli liczba występuje wielokrotnie, to należy zwrócić tę, która znajduje się najbliżej początku oryginalnej tablicy bez przesunięcia cyklicznego.
 
 Uwaga: pomijając wczytanie ciągu, program powinien mieć złożoność k * lg n.
 
