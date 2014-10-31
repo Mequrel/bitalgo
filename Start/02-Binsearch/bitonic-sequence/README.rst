@@ -1,7 +1,7 @@
 Ciąg bitoniczny
 =====
 
-Twoim zadaniem jest wyszukiwanie maksymalnej wartości w ciągu bitonicznym. Ciąg bitoniczny, to taki ciąg, który najpierw jest niemalejący, a następnie nierosnący, z tym, że może być przesunięty cyklicznie. Przykładowo ciąg 1 2 2 5 3 2 jest bitoniczny, podobnie jak jego przesunięcia cykliczne 2 5 3 2 1 2 czy 5 3 2 1 2 2. Ciąg 1 2 5 3 2 1 już bitoniczny nie jest.
+Twoim zadaniem jest wyszukiwanie maksymalnej wartości w ciągu bitonicznym. Ciąg bitoniczny, to taki ciąg, który najpierw jest niemalejący, a następnie nierosnący, z tym, że może być przesunięty cyklicznie. Przykładowo ciąg 1 2 2 5 3 2 jest bitoniczny, podobnie jak jego przesunięcia cykliczne 2 5 3 2 1 2 czy 5 3 2 1 2 2. Ciąg 1 2 5 1 2 1 już bitoniczny nie jest.
 
 Uwaga: pomijając wczytanie ciągu, program powinien mieć logarytmiczną złożoność obliczeniową.
 
