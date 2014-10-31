@@ -1,7 +1,7 @@
 Wyszukiwanie w posortowanym, przesuniętym cyklicznie ciągu.
 =====
 
-Twoim zadaniem jest wyszukiwanie podanych liczb w posortowanej tablicy, która została przesunięta cyklicznie. To znaczy, że oryginalny ciąg liczb został odcięty w pewnym momencie i zamieniony miejscami. W szczególności oryginalny ciąg jest również swoim przesunięciem cyklicznym.
+Twoim zadaniem jest wyszukiwanie podanych liczb w posortowanej tablicy, która została przesunięta cyklicznie. To znaczy, że oryginalny ciąg liczb został odcięty w pewnym momencie i powstałe dwie części zostały zamienione miejscami. W szczególności oryginalny ciąg jest również swoim przesunięciem cyklicznym. Przykładowo przesunięciem cyklicznym ciągu 1 2 3 4 5 jest 2 3 4 5 1, 5 4 3 2 1 lub 1 2 3 4 5.
 
 Otrzymasz listę n list w kolejności rosnącej oraz k pytań o pozycję liczby w tablicy, która została wcześniej podana (numerujemy od 1 do n). Jeśli wyszukiwany jest element nieistniejący w tablicy, to powinniśmy zwrócić wartość -1 pozycji. Jeśli liczba występuje wielokrotnie, to należy zwrócić tę, która znajduje się najbliżej początku oryginalnej tablicy bez przesunięcia cyklicznego.
 
