@@ -1,0 +1,68 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie L:\\Suma zbiorów}
+\cohead[]{Zadanie L:\\Suma zbiorów}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie L: Suma zbiorów}} \\ \\
+Twoim zadaniem jest wykonanie operacji unii na dwóch zadanych zbiorach.
+\\ \\
+Uwaga: nie korzystaj z gotowych bibliotek do sortowania i napisz własny algorytm sortowania przez scalanie (mergesort).
+\\ \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia zawiera dwie liczby całkowite $0 \leq n, m \leq 10^6$ - rozmiary dwóch zbiorów. W kolejnych dwóch liniach podane są elementy odpowiednio pierwszego i drugiego zbioru oddzielone pustymi znakami. Elementy zbiorów nie są większe od miliarda ($0 \leq a_i, b_i \leq 10^9$). 
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu powinien zostać wypisany zbiór, który jest sumą zbiorów $a$ i $b$. Elementy zbioru muszą być wypisane w kolejności niemalejącej i jak przystało na zbiór, nie mogą zawierać duplikatów.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+5 6 \newline
+9 3 5 7 1 \newline
+2 3 4 9 8 7 \newline
+
+&   
+% define output here
+1 2 3 4 5 7 8 9 \newline
+
+\end{tabular}
+\end{document}

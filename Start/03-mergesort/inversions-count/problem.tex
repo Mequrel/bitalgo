@@ -1,0 +1,70 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie K:\\Inwersje}
+\cohead[]{Zadanie K:\\Inwersje}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie K: Inwersje}} \\ \\
+Twoim zadaniem jest zliczenie wszystkich inwersji w danym ciągu $a_i$. Inwersję definiujemy jako parę $(a_j, a_k)$ taką, że $j < k$ i $a_j > a_k$.
+\\
+Podpowiedź: wykorzystaj sortowanie przez scalanie.
+\\ \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia zawiera liczbe całkowitą $0 \leq n \leq 10^6$ - ilość elementów ciągu. W kolejnej linii znajduje się dokładnie $n$ liczb oddzielonych spacją, które reprezentują kolejne elementy ciągu $a_i$, $0 \leq a_i \leq 10^9$.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu powinna zostać wypisana jedna liczba, która reprezentuje łączną ilość inwersji w zadanym ciągu.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+5 \newline
+4 3 1 5 3 \newline
+
+&   
+% define output here
+5 \newline
+
+\end{tabular}
+
+Wyjaśnienie przykładu: inwersje w tym ciągu to: $(4,3), (4,1), (4,3), (3,1), (5,3)$.
+
+\end{document}

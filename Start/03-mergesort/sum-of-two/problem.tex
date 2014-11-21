@@ -1,0 +1,84 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie M:\\Dwie gry}
+\cohead[]{Zadanie M:\\Dwie gry}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie M: Dwie gry}} \\ \\
+Św. Mikołaj podarował Maćkowi kupon umożliwiający kupno gier w popularnym serwisie internetowym o maksymalnej wartości $k$ złotych. Maciek chciałby kupić dwie gry. Nie chce by kupon się nawet częściowo zmarnował, więc ma zamiar kupić takie dwie gry, których łączna cena wynosi $k$ złotych. Znając ceny wszystkich gier w sklepie, podpowiedz Maćkowi czy w ogóle istnieje taka para gier w sklepie, która spełnia jego kryterium. 
+\\ \\
+Uwaga! Wykorzystaj w tym zadaniu algorytm sortowania std::sort z biblioteki standardowej C++ (lub odpowiednik dla innego języka). W przypadku wykorzystywania algorytmu binary search również wykorzystaj funkcję std::binary\_search lub std::lower\_bound.
+\\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia zawiera dwie liczby całkowite $n$ oraz $k$, $0 \leq n \leq 10^6$, $0 \leq k \leq 2 \cdot 10^9$ - ilość gier w sklepie oraz ilość pieniędzy, które Maciek dostał od św. Mikołaja. W kolejnej linii znajduje się dokładnie $n$ liczb oddzielonych spacją - ceny kolejnych gier w sklepie. Ceny są liczbami całkowitymi należącymi do przedziału $[0; 10^9]$.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu powinien zostać wypisany napis `TAK` jeśli Maciek może kupić dwie gry w sklepie spełniające jego kryterium lub napis `NIE` w przeciwnym przypadku.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+10 13 \newline
+9 8 11 20 3 1 9 5 9 13 \newline
+
+&   
+% define output here
+TAK
+\\
+
+\end{tabular}
+\\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+10 2 \newline
+9 8 11 20 3 1 9 5 9 13 \newline
+
+&   
+% define output here
+NIE
+\\
+
+\end{tabular}
+\end{document}

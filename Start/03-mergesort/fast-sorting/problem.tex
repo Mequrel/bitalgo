@@ -1,0 +1,69 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie J:\\Szybkie sortowanie}
+\cohead[]{Zadanie J:\\Szybkie sortowanie}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie J: Szybkie sortowanie}} \\ \\
+Twoim zadaniem jest posortowanie ciągu liczb całkowitych. Tym razem jest on znacznie większy niż poprzednio i wymaga szybszego algorytmu. 
+\\
+Uwaga! Nie korzystaj z gotowych bibliotek do sortowania i napisz własny algorytm sortowania przez scalanie (mergesort).
+\\ \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia zawiera liczbe całkowitą $n$, $0 \leq n \leq 10^6$ - ilość elementów ciągu. W kolejnej linii znajduje się dokładnie $n$ liczb oddzielonych spacją, które stanowią zadany ciąg. Liczby te są z przedziału $[-10^9; 10^9]$.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu powinien zostać wypisany ciąg w kolejności niemalejącej. Każdy element powinien być oddzielony spacją.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+10 \newline
+9 8 11 20 3 1 9 5 9 10 \newline
+
+&   
+% define output here
+1 3 5 8 9 9 9 10 11 20 \newline
+
+\\
+
+\end{tabular}
+\end{document}
