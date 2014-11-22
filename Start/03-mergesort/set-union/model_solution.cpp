@@ -34,7 +34,7 @@ void merge(int* first_part, int first_part_size, int* second_part, int second_pa
 }
 
 void merge_sort(int* data, int size) {
-  if(size == 1) {
+  if(size <= 1) {
     return;
   }
 
