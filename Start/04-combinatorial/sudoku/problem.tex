@@ -1,0 +1,82 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie Q:\\Sudoku}
+\cohead[]{Zadanie Q:\\Sudoku}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie Q: Sudoku}} \\ \\
+Twoim zadaniem jest napisanie programu, który rozwiązuje sudoku. Sudoku to znana łamigłówka logiczna, w której otrzymujemy planszę $9 \times 9$ podzieloną na 9 obszarów $3 x 3$. W polach planszy musimy wpisać liczby ze zbioru $[1, 2, \ldots, 9]$ tak aby żadna z tych liczb się nie powtórzyła w żadnej kolumnie i w żadnym wierszu, a także w żadnych z dziewięciu obszarów. Plansza jest już częściowo wypełniona liczbami. Twoim zadaniem jest wstawić pozostałe liczby nie naruszając zasad gry. Możesz założyć, że zawsze istnieje jakieś rozwiązanie dla każdej zadanej zagadki.
+Twój program powinien być w stanie rozwiązać najtrudniejsze sudoku (17 pól początkowych) w ciągu maksymalnie 2 sekund. Zalecane jest poszukanie przykładowych sudoku i ich rozwiązań w sieci, poczynając od tych najprostszych. \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Początkowy stan tablicy zdefiniowany jest jako 81 liczb podzielonych na 9 wierszy. Wartość z zakresu $[1, 2, \ldots, 9]$ oznacza, że w polu mamy już ustawioną wartość, natomiast $0$ oznacza, że pole jest puste.
+\\ 
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu powinna zostać wypisana plansza w identycznym formacie jak na wejściu, z tym, że każde pole jest uzupełnione (nie ma zer).
+\\ 
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+0 0 0 0 0 0 0 0 0 \newline
+0 0 7 8 3 0 9 0 0 \newline
+0 0 5 0 0 2 6 4 0 \newline
+0 0 2 6 0 0 0 7 0 \newline
+0 4 0 0 0 0 0 8 0 \newline
+0 6 0 0 0 3 2 0 0 \newline
+0 2 8 4 0 0 5 0 0 \newline
+0 0 0 0 9 6 1 0 0 \newline
+0 0 0 0 0 0 0 0 0 \newline
+
+&   
+% define output here
+2 9 4 1 6 5 8 3 7 \newline
+6 1 7 8 3 4 9 5 2 \newline
+3 8 5 9 7 2 6 4 1 \newline
+5 3 2 6 8 1 4 7 9 \newline
+7 4 1 2 5 9 3 8 6 \newline
+8 6 9 7 4 3 2 1 5 \newline
+9 2 8 4 1 7 5 6 3 \newline
+4 7 3 5 9 6 1 2 8 \newline
+1 5 6 3 2 8 7 9 4 \newline
+
+\\
+
+\end{tabular}
+\end{document}
