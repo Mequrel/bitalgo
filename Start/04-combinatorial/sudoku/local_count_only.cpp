@@ -10,6 +10,7 @@
 
 #include <cstdio>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -45,6 +46,10 @@ class Board {
     return false;
   }
 
+  void RemoveFree(int position) {
+    _free.erase(find(_free.begin(), _free.end(), position));
+  }
+
 public:
   Board(int board_size, int sector_size) : _board_size(board_size), _sector_size(sector_size) {
     kEmptyField = 0;
@@ -52,6 +57,10 @@ public:
   
     for(int i=0; i<_board_size; ++i) {
       _board[i].resize(_board_size);
+    }
+
+    for(int position = _board_size * _board_size - 1; position >= 0; --position) {
+      _free.push_back(position);
     }
   }
 
@@ -72,6 +81,13 @@ public:
   }
 
   void Place(int value, int position) {
+    if(value == kEmptyField && !IsEmpty(position)) {
+      _free.push_back(position);
+    }
+    else if(value != kEmptyField && IsEmpty(position)) {
+      RemoveFree(position);
+    }
+
     _board[position / _board_size][position % _board_size] = value; 
   }
 
@@ -90,21 +106,27 @@ public:
                           possible_value);
   }
 
+  int GetFirstEmpty() {
+    return _free[_free.size()-1];
+  }
+
+  bool HasNoEmptyFieldsLeft() {
+    return _free.empty();
+  }
+
 private:
   vector<vector<int> > _board;
+  vector<int> _free;
   int _board_size;
   int _sector_size;
 };
 
-bool solve_sudoku(Board* board, int start_from) {
-  int position = start_from;
-  while(position < board->AllFieldsNumber() && !board->IsEmpty(position)) {
-    position++;
-  }
-
-  if(position == board->AllFieldsNumber()) {
+bool solve_sudoku(Board* board) {
+  if(board->HasNoEmptyFieldsLeft()) {
     return true;
   }
+
+  int position = board->GetFirstEmpty();
 
   for(int possible_value = 1; possible_value <= board->RowSize(); ++possible_value) {
     if(!board->IsValidToPlace(possible_value, position)) {
@@ -112,7 +134,7 @@ bool solve_sudoku(Board* board, int start_from) {
     }
 
     board->Place(possible_value, position);
-    bool successful = solve_sudoku(board, start_from + 1);
+    bool successful = solve_sudoku(board);
     if(successful) {
       return true;
     }
@@ -142,7 +164,7 @@ int main() {
     }
   }
 
-  solve_sudoku(board, 0);
+  solve_sudoku(board);
 
   for(int position = 0; position < board->AllFieldsNumber(); ++position) {
     if(position > 0 && position % board->RowSize() == 0) {
