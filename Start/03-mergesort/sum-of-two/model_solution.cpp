@@ -1,3 +1,14 @@
+/**
+
+  Zadanie M: Dwie gry.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie wzorcowe z użyciem binary search.
+
+  Złożoność rozwiązania: O(n lg n)
+
+**/
+
 #include <algorithm>
 #include <cstdio>
 #include <vector>

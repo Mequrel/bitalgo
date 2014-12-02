@@ -1,3 +1,14 @@
+/**
+
+  Zadanie L: Suma zbiorów.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(n lg n + m lg m)
+
+**/
+
 #include <cstdio>
 #include <vector>
 

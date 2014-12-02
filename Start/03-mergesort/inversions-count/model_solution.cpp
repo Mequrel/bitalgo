@@ -1,3 +1,14 @@
+/**
+
+  Zadanie K: Inwersje.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(n lg n)
+
+**/
+
 #include <cstdio>
 #include <vector>
 
