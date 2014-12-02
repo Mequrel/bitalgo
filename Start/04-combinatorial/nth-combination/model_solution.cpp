@@ -1,8 +1,9 @@
 /**
 
-  Zadanie O: Kombinacje. Rozwiązanie wzorcowe.
+  Zadanie O: Kombinacje.
   Autor: Bartłomiej Szczepanik
 
+  Rozwiązanie wzorcowe.
   Złożoność rozwiązania: O(test_cases * n * k)
 
 **/

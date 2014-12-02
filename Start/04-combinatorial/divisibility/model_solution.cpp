@@ -1,3 +1,14 @@
+/**
+
+  Zadanie P: Dzielniki.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(2^n * n * lg(m)), gdzie m to maksymalna wartość liczb
+
+**/
+
 #include <cstdio>
 #include <vector>
 
@@ -43,7 +54,6 @@ int lcm(const vector<int>& numbers) {
     result = lcm(result, numbers[i]);
   }
 
-  //printf("-- %d\n", result);
   return result;
 }
 

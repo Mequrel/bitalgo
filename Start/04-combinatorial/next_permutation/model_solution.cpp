@@ -1,3 +1,14 @@
+/**
+
+  Zadanie N: Kolejna permutacja.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(n)
+
+**/
+
 #include <cstdio>
 #include <algorithm>
 

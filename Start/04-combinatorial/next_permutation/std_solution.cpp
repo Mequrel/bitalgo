@@ -1,3 +1,12 @@
+/**
+
+  Zadanie N: Kolejna permutacja.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie pokazowe z użyciem biblioteki standardowej.
+
+**/
+
 #include <cstdio>
 #include <vector>
 #include <algorithm>
