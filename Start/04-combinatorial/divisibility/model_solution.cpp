@@ -26,9 +26,9 @@ int gcd(int a, int b) {
 }
 
 int lcm(int a, int b) {
-  int64 result = a * b / gcd(a, b);
+  int64 result = ((int64) a) * ((int64) b) / ((int64) gcd(a, b));
 
-  if(result > WAY_TO_BIG) {
+  if(result > (int64) WAY_TO_BIG) {
     result = WAY_TO_BIG;
   }
 
@@ -43,6 +43,7 @@ int lcm(const vector<int>& numbers) {
     result = lcm(result, numbers[i]);
   }
 
+  //printf("-- %d\n", result);
   return result;
 }
 
@@ -74,7 +75,6 @@ int divisors(const Range& range, const vector<int>& numbers) {
 
   for(int i=1; i<all_subsets_number; ++i) {  // skipping zero-element subset
     vector<int> subset = unrank(numbers, i);
-
     int common_divisors = single_number_divisors(range, lcm(subset));
 
     if(subset.size() % 2 == 1) {
