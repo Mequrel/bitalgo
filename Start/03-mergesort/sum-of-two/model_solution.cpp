@@ -7,7 +7,7 @@ using namespace std;
 bool check_for_two_items_of_sum(vector<int>& items, int sum) {
   std::sort(items.begin(), items.end());
 
-  for(auto first_value = items.begin(); first_value != items.end(); first_value++) {
+  for(vector<int>::iterator first_value = items.begin(); first_value != items.end(); first_value++) {
     int wanted_price = sum - *first_value;
 
     if (binary_search(first_value + 1, items.end(), wanted_price)) {
