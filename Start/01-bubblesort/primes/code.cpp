@@ -1,3 +1,14 @@
+/**
+
+  Zadanie C: Liczby pierwsze.
+  Autor: Jakub Czarnowicz.
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(n sqrt(n))
+
+**/
+
 #include <cstdio>
 
 bool prime(int n) {

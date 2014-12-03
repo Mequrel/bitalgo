@@ -1,3 +1,12 @@
+/**
+
+  Zadanie A: Hello World.
+  Autor: Jakub Czarnowicz.
+
+  Rozwiązanie wzorcowe.
+
+**/
+
 #include <cstdio>
 
 int main() {
