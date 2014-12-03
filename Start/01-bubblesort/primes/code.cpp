@@ -5,7 +5,7 @@
 
   Rozwiązanie wzorcowe.
 
-  Złożoność rozwiązania: O(n sqrt(n))
+  Złożoność rozwiązania: O(z sqrt(m)), gdzie m to największa możliwa liczba do sprawdzenia
 
 **/
 
