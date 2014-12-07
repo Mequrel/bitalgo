@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Node {
+struct Node {
 	public:
 		Node *next;
 		int value;
@@ -19,21 +19,16 @@ class Node {
 
 class Stack {
 	private:
-		Node head;
+		Node head;	
 
 	public:
 		Stack() {}
 		~Stack() {
-			while(head.next != NULL) {
-				Node *topNode = head.next;
-				head.next = topNode->next;
-				delete topNode;
-			}
+			clear();
 		}
 
 		bool isEmpty() const {
-			if (head.next == NULL) return true;
-			else return false;
+			return (head.next == NULL);
 		}
 
 		void push(int newValue) {
@@ -42,16 +37,27 @@ class Stack {
 			head.next = newNode;
 		}
 
-		int pop() {
+		void pop() {
 			if(isEmpty()) throw "pop on empty list";
 
 			Node *topNode = head.next;
-			int topValue = topNode->value;
 			head.next = topNode->next;
 			delete topNode;
-			return topValue;
+		}
+		
+		int top() {
+			if(isEmpty()) throw "top on empty list";
+			Node *topNode = head.next;
+			return topNode->value;
 		}
 
+		void clear() {
+				while(head.next != NULL) {
+				Node *topNode = head.next;
+				head.next = topNode->next;
+				delete topNode;
+			}
+		}
 };
 
 int main() {
