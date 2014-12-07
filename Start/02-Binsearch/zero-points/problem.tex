@@ -1,0 +1,73 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie I:\\Rozwiązywanie równań}
+\cohead[]{Zadanie I:\\Rozwiązywanie równań}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie I: Rozwiązywanie równań}} \\ \\
+\indent Twoim zadaniem jest wyliczenie pierwiastka równania:
+ $$f(x) = 0$$
+gdzie:
+$$f(x) = Asin(Bx + C) + De^{(Ex + F)} + G|Hx + I| + J$$
+Możesz założyć, że istnieje dokładnie jedno rozwiązanie na zadanym przedziale $[p; q]$.
+\\ \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+\indent W~pierwszej linii wejścia znajdują się dwie liczby wymierne $p$ i~$q$ $(p \leq q)$ - odpowiednio początek i~koniec przedziału. W~następnej linii znajduje się $10$ liczb wymiernych: $A, B, C, D, E, F, G, H, I, J$. Są to współczynniki funkcji. Możesz przyjąć, że wszystkie dane zmieszczą się w~typie double oraz że funkcja jest obliczalna i ciągła na szukanym przedziale, jak również, że przyjmuje przeciwne znaki na krańcach zadanego przedziału.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+\indent Na standardowym wyjściu powinna znaleźć się jedna liczba $x$ - wartość pierwiastka równania.
+Oczekiwana dokładność to $7$ miejsc po przecinku.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+	Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+-0.5 0.5 \newline
+0 0 0 0 0 0 1 1 1 -1 \newline
+
+&   
+% define output here
+0.0 \newline
+
+\\
+
+\end{tabular}
+
+\end{document}
+
