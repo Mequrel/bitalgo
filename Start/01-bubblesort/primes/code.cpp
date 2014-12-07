@@ -10,27 +10,36 @@
 **/
 
 #include <cstdio>
+#include <vector>
 
-bool prime(int n) {
-	if(n == 1) return false;
-	for(int i = 2; i*i <= n; ++i) { 
-		if(n % i == 0) return false;
+void sito(long long n, bool *T) {
+	for(long long i = 0; i < n; ++i) T[i] = true;
+	T[0] = false;
+	T[1] = false;
+	for(long long i = 2; i < n; ++i) {
+		if(T[i] == true) {
+			for(long long j = i*i; j < n; j += i) {
+				T[j] = false;
+			}
+		}
 	}
-	return true;
 }
 
 int main() {
 	int z;
+	bool *prime = new bool[1000001];
+	sito(1000001, prime);
 	scanf("%d", &z);
 	while(z--) {
 		int n;
 		scanf("%d", &n);
-		if(prime(n)) {
+		if(prime[n]) {
 			printf("TAK\n");
 		}
 		else {
 			printf("NIE\n");
 		}
 	}
+	delete[] prime;
 	return 0;
 }
