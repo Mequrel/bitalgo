@@ -1,0 +1,86 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie N:\\Kolejna permutacja}
+\cohead[]{Zadanie N:\\Kolejna permutacja}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie N: Kolejna permutacja}} \\ \\
+Twoim zadaniem jest wyznaczenie kolejnej permutacji w porządku leksykograficznym dla zadanego ciągu. Przykładowo dla ciągu $3, 2, 1, 2$ kolejne permutacje w tym porządku to: $(1, 2, 2, 3), (1, 2, 3, 2), (1, 3, 2, 2), (3, 1, 2, 2), (3, 2, 1, 2), (3, 2, 2, 1)$.
+
+W przypadku, gdy wejściowa permutacja jest ostatnią w porządku leksykograficznym, odpowiedzią jest permutacja pierwsza.
+\\ \\
+Uwaga! Nie wykorzystuj gotowej metody std::next\_permutation z biblioteki standardowej. Rozwiązania, które używają tej metody będą unieważniane.
+\\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia zawiera jedną liczbę całkowitą $n \geq 1$ oznaczającą długość ciągu. W kolejnej linii znajduje się $n$ liczb, które definiują aktualną permutację ciągu. Elementy ciągu są liczbami całkowitymi należącymi do przedziału $[0; 10^9]$.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu powinno zostać wypisanych $n$ liczb - kolejne elementy ciągu w kolejności zdefiniowanej przez kolejną w porządku leksykograficznym permutację.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+10 \newline
+3 4 3 2 1 2 4 3 2 1 \newline
+
+&   
+% define output here
+3 4 3 2 1 3 1 2 2 4
+\\
+
+\end{tabular}
+\\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+4 \newline
+4 3 2 1 \newline
+
+&   
+% define output here
+1 2 3 4
+\\
+
+\end{tabular}
+\end{document}

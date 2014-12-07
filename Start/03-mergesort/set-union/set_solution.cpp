@@ -1,3 +1,14 @@
+/**
+
+  Zadanie L: Suma zbiorów.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie pokazowe z wykorzystaniem std::set.
+
+  Złożoność rozwiązania: O((n+m) lg (n+m))
+
+**/
+
 #include <cstdio>
 #include <set>
 

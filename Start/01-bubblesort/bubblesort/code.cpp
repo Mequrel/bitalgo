@@ -1,3 +1,15 @@
+/**
+
+  Zadanie D: Bubble sort.
+  Autor: Jakub Czarnowicz.
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(n^2)
+
+**/
+
+
 #include <cstdio>
 #include <algorithm>
 #include <vector>

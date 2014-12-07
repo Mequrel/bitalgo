@@ -1,3 +1,14 @@
+/**
+
+  Zadanie J: Szybkie sortowanie.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(n lg n)
+
+**/
+
 #include <cstdio>
 #include <vector>
 

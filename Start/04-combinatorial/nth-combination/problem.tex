@@ -1,0 +1,71 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie O:\\Kombinacje}
+\cohead[]{Zadanie O:\\Kombinacje}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie O: Kombinacje}} \\ \\
+Twoim zadaniem jest wyznaczenie $i$-tej w kolejności leksykograficznej $k$-elementowej kombinacji zbioru $[1, 2, 3, \ldots, n]$.
+\\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia zawiera jedną liczbę całkowitą $1 \leq t \leq 10$ oznaczającą ilość przypadków testowych. W kolejnych $t$ liniach znajdują się po trzy liczby: $n$, $k$ oraz $i$, spełniające warunek $1 \leq i \leq {n \choose k}$ oraz $1 \leq k \leq n \leq 50$.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu powinno zostać wypisanych $t$ kombinacji liczb, odpowiednio dla każdego przypadku testowego. Każda kombinacja składa się z $k$ liczb oddzielonych pustym znakiem.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+3 \newline
+1 1 1 \newline
+3 2 2 \newline
+5 2 6 \newline
+
+&   
+% define output here
+1 \newline
+1 3 \newline
+2 4 \newline
+
+\\
+
+\end{tabular}
+\end{document}

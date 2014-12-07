@@ -1,3 +1,14 @@
+/**
+
+  Zadanie C: Liczby pierwsze.
+  Autor: Jakub Czarnowicz.
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(z sqrt(m)), gdzie m to największa możliwa liczba do sprawdzenia
+
+**/
+
 #include <cstdio>
 #include <vector>
 

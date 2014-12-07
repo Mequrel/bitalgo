@@ -1,3 +1,14 @@
+/**
+
+  Zadanie J: Szybkie sortowanie.
+  Autor: Bartłomiej Szczepanik
+
+  Rozwiązanie pokazowe z użyciem std::sort.
+
+  Złożoność rozwiązania: O(n lg n)
+
+**/
+
 #include <algorithm>
 #include <cstdio>
 #include <vector>

@@ -1,5 +1,16 @@
-#include<cstdio>
-#include<algorithm>
+/**
+
+  Zadanie B: NWD i NWW.
+  Autor: Jakub Czarnowicz.
+
+  Rozwiązanie wzorcowe.
+
+  Złożoność rozwiązania: O(lg max(a,b))
+
+**/
+
+#include <cstdio>
+#include <algorithm>
 using namespace std;
 
 long long NWD(long long a, long long b) {
