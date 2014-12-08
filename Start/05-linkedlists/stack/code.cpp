@@ -68,10 +68,12 @@ int main() {
 		string operation;
 		cin >> operation;
 		if(operation == "POP") {
+			if(!stack.isEmpty()) stack.pop();
+		} else if(operation == "TOP") {
 			if(stack.isEmpty()) {
 				cout << "EMPTY\n";
 			} else{
-				cout << stack.pop() << "\n";
+				cout << stack.top() << "\n";
 			}
 		} else {
 			int value;

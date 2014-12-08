@@ -1,0 +1,84 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie R:\\Stos}
+\cohead[]{Zadanie R:\\Stos}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie R: Stos}} \\ \\
+\indent Twoim zadaniem jest zaimplementowanie stosu korzystającego z~jednokierunkowej listy wiązanej. Twoje rozwiązanie powinno obsługiwać trzy operacje:
+\begin{enumerate}
+		\item $TOP$ - podaje jaka wartość jest na szczycie stosu.
+		\item $POP$ - zdejmuje wartość ze szczytu stosu. Jeśli stos jest pusty operacja $POP$ nic nie robi.
+		\item $PUSH$ $X$ - wstawia wartość $X$ na szczyt stosu.
+\end{enumerate}
+\\ \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+\indent W~pierwszej linii wejścia znajduje liczba naturalna $z$ - liczba operacji na stoie $(z \leq 1000000)$. W~kolejnych $z$ liniach znajduje się lista operacji na stosie. Wszystkie przechowywane wartości to liczby całkowite mieszczące się w~type $int$.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+\indent Dla każdej operacji $TOP$ program powinien wypisać pojedynczą liczbę - wartość ze szczytu stosu. Jeżeli stos jest pusty program powinien wypisać $EMPTY$.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{p{7cm} p{7cm} }
+	Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+10 \newline
+PUSH 5 \newline
+PUSH 7 \newline
+TOP \newline
+PUSH 2 \newline
+TOP \newline
+POP \newline
+POP \newline
+TOP \newline
+POP \newline
+TOP \newline
+
+&   
+% define output here
+7 \newline
+2 \newline
+5 \newline
+EMPTY \newline
+
+\\
+
+\end{tabular}
+
+\end{document}
