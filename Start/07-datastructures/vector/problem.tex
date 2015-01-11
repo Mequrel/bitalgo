@@ -1,0 +1,91 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie U:\\Dynamiczna tablica}
+\cohead[]{Zadanie U:\\Dynamiczna tablica}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie U: Dynamiczna tablica}} \\ \\
+Twoim zadaniem jest efektywna implementacja interfejsu dynamicznej tablicy. Interfejs zawiera operację dodawania i usuwania elementu na końcu, sprawdzania i przypisywania elementu pod wskazany indeks oraz inicjalizację tablicy o zadanej długości. Zakładamy, że na samym początku tablica nie posiada żadnych elementów.
+\\
+Uwaga! Nie korzystaj z kontenera std::vector, ale wykorzystaj podobny mechanizm alokacji pamięci do tego, który używa ten kontener. Jest on opisany między innymi tutaj: http://en.wikipedia.org/wiki/Dynamic_array.
+\\ \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia zawiera liczbę całkowitą $n$, $0 \leq n \leq 10^6$ - ilość poleceń. W kolejnych $n$ liniach znajduje się jedno polecenie z poniższych:
+\begin{itemize}
+  \item $RESIZE n x$ - inicjalizacja tablicy o rozmiarze $n$, której każdy element ma ustaloną wartość $x$. Poprzednie wartości elementów są nadpisywane.
+  \item $GET i$ - zwraca wartość elementu w tablicy pod indeksem $i$.
+  \item $SET i x$ - ustawia wartość elementu w tablicy pod indeksem $i$ na $x$.
+  \item $PUSH_BACK x$ - dodaje element $x$ na koniec tablicy.
+  \item $POP_BACK i$ - usuwa ostatni element tablicy.
+\end{itemize}
+
+Wartości powyższych zmiennych są ograniczone: $0 \leq n, i, x \leq 10^6$. Możesz założyć, że operacja $POP_BACK$ nigdy nie zostanie wywołana na pustej tablicy a $SET$ nigdy nie otrzyma indeksu, który nie istnieje w tablicy.
+
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu dla każdej komendy ($GET$) powinien zostać wypisany wynik jej działania (wartość elementu o zadanym indeksie). Jeśli operacja $GET$ zostanie wykonana na indeksie większym lub równym rozmiarowi tablicy, to program powinien wypisać napis $OUT OF BOUND$.
+\\ \\
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+9 \newline
+PUSH_BACK 2 \newline
+GET 0 \newline
+GET 1 \newline
+RESIZE 5 1 \newline
+GET 4 \newline
+SET 4 8 \newline
+GET 4 \newline
+POP_BACK \newline
+GET 4 \newline
+
+&   
+% define output here
+2 \newline
+OUT OF BOUND \newline
+1 \newline
+8 \newline
+OUT OF BOUND \newline
+
+\\
+
+\end{tabular}
+\end{document}
