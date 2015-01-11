@@ -21,6 +21,8 @@
 
 \usepackage{graphicx}
 
+\usepackage{hyperref}
+
 \clearscrheadfoot                 % deletes header/footer
 \pagestyle{scrheadings}           % use following definitions for header/footer
 % definitions/configuration for the header
@@ -41,24 +43,28 @@
 \par{\Large \textbf{Zadanie U: Dynamiczna tablica}} \\ \\
 Twoim zadaniem jest efektywna implementacja interfejsu dynamicznej tablicy. Interfejs zawiera operację dodawania i usuwania elementu na końcu, sprawdzania i przypisywania elementu pod wskazany indeks oraz inicjalizację tablicy o zadanej długości. Zakładamy, że na samym początku tablica nie posiada żadnych elementów.
 \\
-Uwaga! Nie korzystaj z kontenera std::vector, ale wykorzystaj podobny mechanizm alokacji pamięci do tego, który używa ten kontener. Jest on opisany między innymi tutaj: http://en.wikipedia.org/wiki/Dynamic_array.
+Uwaga! Nie korzystaj z kontenera std::vector, ale wykorzystaj podobny mechanizm alokacji pamięci do tego, który używa ten kontener. Jest on opisany między innymi tutaj: \url{http://en.wikipedia.org/wiki/Dynamic_array}.
 \\ \\
 \par{\Large \textbf{Format wejścia}} \\ \\
 Pierwsza linia wejścia zawiera liczbę całkowitą $n$, $0 \leq n \leq 10^6$ - ilość poleceń. W kolejnych $n$ liniach znajduje się jedno polecenie z poniższych:
 \begin{itemize}
-  \item $RESIZE n x$ - inicjalizacja tablicy o rozmiarze $n$, której każdy element ma ustaloną wartość $x$. Poprzednie wartości elementów są nadpisywane.
-  \item $GET i$ - zwraca wartość elementu w tablicy pod indeksem $i$.
-  \item $SET i x$ - ustawia wartość elementu w tablicy pod indeksem $i$ na $x$.
-  \item $PUSH_BACK x$ - dodaje element $x$ na koniec tablicy.
-  \item $POP_BACK i$ - usuwa ostatni element tablicy.
+  \item $RESIZE \ n \ x$ - inicjalizacja tablicy o rozmiarze $n$, której każdy element ma ustaloną wartość $x$. Poprzednie wartości elementów są nadpisywane.
+  \item $GET \ i$ - zwraca wartość elementu w tablicy pod indeksem $i$.
+  \item $SET \ i \ x$ - ustawia wartość elementu w tablicy pod indeksem $i$ na $x$.
+  \item $PUSH\_BACK \ x$ - dodaje element $x$ na koniec tablicy.
+  \item $POP\_BACK \ i$ - usuwa ostatni element tablicy.
 \end{itemize}
 
-Wartości powyższych zmiennych są ograniczone: $0 \leq n, i, x \leq 10^6$. Możesz założyć, że operacja $POP_BACK$ nigdy nie zostanie wywołana na pustej tablicy a $SET$ nigdy nie otrzyma indeksu, który nie istnieje w tablicy.
-
+Wartości powyższych zmiennych są ograniczone: $0 \leq n, i, x \leq 10^6$. Możesz założyć, że operacja $POP\_BACK$ nigdy nie zostanie wywołana na pustej tablicy a $SET$ nigdy nie otrzyma indeksu, który nie istnieje w tablicy.
 \\ \\
 \par{\Large \textbf{Format wyjścia}} \\ \\
-Na wyjściu dla każdej komendy ($GET$) powinien zostać wypisany wynik jej działania (wartość elementu o zadanym indeksie). Jeśli operacja $GET$ zostanie wykonana na indeksie większym lub równym rozmiarowi tablicy, to program powinien wypisać napis $OUT OF BOUND$.
-\\ \\
+Na wyjściu dla każdej komendy $GET$ powinien zostać wypisany wynik jej działania (wartość elementu o zadanym indeksie). Jeśli operacja $GET$ zostanie wykonana na indeksie większym lub równym rozmiarowi tablicy, to program powinien wypisać napis $OUT \ OF \ BOUND$.
+~\\
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+\newline
+
 \par{\Large \textbf{Przykład}} \\ \\
 \begin{tabular}{ p{7cm} p{7cm} }
 
@@ -67,14 +73,14 @@ Na wyjściu dla każdej komendy ($GET$) powinien zostać wypisany wynik jej dzia
 
 % define input here
 9 \newline
-PUSH_BACK 2 \newline
+PUSH\_BACK 2 \newline
 GET 0 \newline
 GET 1 \newline
 RESIZE 5 1 \newline
 GET 4 \newline
 SET 4 8 \newline
 GET 4 \newline
-POP_BACK \newline
+POP\_BACK \newline
 GET 4 \newline
 
 &   

@@ -5,7 +5,7 @@
 
   Rozwiązanie wzorcowe.
 
-  Złożoność rozwiązania: O(n) (dzięki amortyzacji)
+  Złożoność rozwiązania: O(n), złożoność pojedynczej operacji amortyzuje się do O(1)
 
 **/
 
