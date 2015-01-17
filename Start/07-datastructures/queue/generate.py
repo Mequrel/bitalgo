@@ -3,7 +3,7 @@ from random import choice
 from collections import namedtuple
 from itertools import chain
 
-case_number = 0
+case_number = 1
 
 def PUSH(x):
   return "PUSH {0}".format(x)

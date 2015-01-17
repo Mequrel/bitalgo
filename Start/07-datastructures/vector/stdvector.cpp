@@ -30,6 +30,7 @@ int main() {
       cin >> elements >> value;
 
       dynamic_array.resize(elements, value);
+      fill(dynamic_array.begin(), dynamic_array.end(), value);
     }
     else if(operation == "GET") {
       int index;
