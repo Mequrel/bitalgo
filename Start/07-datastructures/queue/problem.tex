@@ -1,0 +1,106 @@
+\documentclass[
+  fontsize=12pt  %
+ ,english        % 
+ ,headinclude    %
+ ,headsepline    % line between head an document text
+%,BCOR=12mm      % 
+]{scrbook}       % twosided, A4 paper
+
+\usepackage[T1]{fontenc}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[french,polutonikogreek,polish]{babel}
+
+%\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+
+
+\usepackage{blindtext} % provides blindtext with sectioning
+
+\usepackage{scrpage2}  % header and footer for KOMA-Script
+
+\usepackage{graphicx}
+
+\clearscrheadfoot                 % deletes header/footer
+\pagestyle{scrheadings}           % use following definitions for header/footer
+% definitions/configuration for the header
+\rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
+\lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
+\cehead[]{Zadanie V:\\Kolejka}
+\cohead[]{Zadanie V:\\Kolejka}
+\lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
+\rohead[]{\includegraphics[width=15mm]{logo.png}}
+% definitions/configuration for the footer
+\cofoot[\pagemark]{\pagemark}     % odd   page, center position
+
+\begin{document}
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+
+\par{\Large \textbf{Zadanie V: Kolejka}} \\ \\
+Twoim zadaniem jest efektywna implementacja interfejsu kolejki (FIFO) z ograniczoną pojemnością. Interfejs zawiera operację sprawdzania wartości i usuwania pierwszego elementu, dodawania elementu na końcu. Zakładamy, że na samym początku kolejka jest pusta.
+\\
+Uwaga! Nie korzystaj z kontenera std::queue lub std::deque. Twoja implementacja powinna używać tablicy a nie listy. Wykorzystaj ideę cyklicznego bufora.
+\\ \\
+\par{\Large \textbf{Format wejścia}} \\ \\
+Pierwsza linia wejścia dwie liczby całkowite $n$ i $k$, $0 \leq n, k \leq 10^6$ - ilość poleceń. $n$ definiuje pojemność kolejki, tzn. maksymalną ilość elementów. W kolejnych $k$ liniach znajduje się jedno polecenie z poniższych:
+\begin{itemize}
+  \item $PUSH x$ - dodaje element $x$ na koniec kolejki,
+  \item $POP$ - usuwa pierwszy element z kolejki,
+  \item $FRONT$ - zwraca wartość pierwszego elementu w kolejce.
+\end{itemize}
+
+Wartości elementów są ograniczone: $0 \leq x \leq 10^6$.
+\\ \\
+\par{\Large \textbf{Format wyjścia}} \\ \\
+Na wyjściu dla każdej komendy powinien zostać wypisany wynik jej działania:
+\begin{itemize}
+  \item $PUSH$ - napis $OK$ lub $FULL$ jeśli kolejka jest pełna,
+  \item $POP$ - napis $OK$ lub $EMPTY$ jeśli kolejka jest pusta,
+  \item $FRONT$ - wartość pierwszego elementu w kolejce lub napis $NONE$ jeśli kolejka jest pusta.
+\end{itemize}
+
+~\\
+\vspace{50 mm}
+\hspace{50 mm}
+\newline
+\newline
+
+\par{\Large \textbf{Przykład}} \\ \\
+\begin{tabular}{ p{7cm} p{7cm} }
+
+  Dla danych wejściowych: \hspace{40mm}& Poprawną odpowiedzią jest \\
+& \\
+
+% define input here
+3 11 \newline
+FRONT \newline
+PUSH 4 \newline
+PUSH 3 \newline
+PUSH 9 \newline
+PUSH 8 \newline
+FRONT \newline
+POP \newline
+POP \newline
+FRONT \newline
+POP \newline
+POP \newline
+&   
+% define output here
+NONE \newline
+OK \newline
+OK \newline
+OK \newline
+FULL \newline
+4 \newline
+OK \newline
+OK \newline
+9 \newline
+OK \newline
+EMPTY \newline
+
+\\
+
+\end{tabular}
+\end{document}
