@@ -31,7 +31,7 @@ def generate_tests(path):
     os.makedirs(test_directory)
 
   for i, case in enumerate(testcases.cases()):
-    filename = 'input{:0>2d}'.format(i)
+    filename = 'input{:0>2d}.txt'.format(i)
     filepath = os.path.join(test_directory, filename)
     with open(filepath, 'w') as output:
       output.write(case)
@@ -39,9 +39,6 @@ def generate_tests(path):
 def compile(path, target):
   with lcd(path):
     local('g++ -std=c++11 -O2 -o {0} {0}.cpp'.format(target))
-
-def clean(path):
-  pass
 
 def generate_outputs(path):
   config = import_module(os.path.join(path, 'config.py'))
@@ -57,8 +54,8 @@ def generate_outputs(path):
   input_files = glob.glob(os.path.join(input_directory, 'input*'))
 
   for input_file in input_files:
-    number = input_file[-2:]
-    output_file = os.path.join(output_directory, 'output' + number)
+    number = input_file[-6:-4]
+    output_file = os.path.join(output_directory, 'output' + number + '.txt')
     local('{0} < {1} > {2}'.format(executable, input_file, output_file))
 
 def zip_testcases(path):
@@ -84,9 +81,9 @@ def validate(path, solution):
   input_files = glob.glob(os.path.join(input_directory, 'input*'))
 
   for input_file in input_files:
-    number = input_file[-2:]
-    output_file = os.path.join(output_directory, 'output' + number)
-    true_output_file = os.path.join(true_output_directory, 'output' + number)
+    number = input_file[-6:-4]
+    output_file = os.path.join(output_directory, 'output' + number + '.txt')
+    true_output_file = os.path.join(true_output_directory, 'output' + number + '.txt')
 
     local('time {0} < {1} > {2}'.format(executable, input_file, output_file))
     local('diff -qs {0} {1}'.format(output_file, true_output_file))
@@ -132,4 +129,19 @@ def make(path):
   test_solutions(path)
   generate_pdf(path)
 
+def rm(path, filename):
+  local('rm ' + os.path.join(path, filename))
+
+def clean(path):
+  with lcd(path):
+    local('rm problem.pdf')
+    local('rm testcases.zip')
+    local('rm *.pyc')
   
+    config = import_module(os.path.join(path, 'config.py'))
+
+    for solution in set(config.solutions_to_validate + [config.output_generator]):
+      local('rm ' + solution)
+
+  shutil.rmtree(os.path.join(path, 'input'))
+  shutil.rmtree(os.path.join(path, 'output'))
