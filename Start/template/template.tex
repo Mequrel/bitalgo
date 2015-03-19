@@ -13,12 +13,8 @@
 \usepackage[french,polutonikogreek,polish]{babel}
 
 %\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
-
-
-\usepackage{blindtext} % provides blindtext with sectioning
-
+%\usepackage{blindtext} % provides blindtext with sectioning
 \usepackage{scrpage2}  % header and footer for KOMA-Script
-
 \usepackage{graphicx}
 
 \clearscrheadfoot                 % deletes header/footer
@@ -26,8 +22,8 @@
 % definitions/configuration for the header
 \rehead[]{\Large \textbf{BitAlgo Start}}        % equal page, right position (inner) 
 \lohead[]{\Large \textbf{BitAlgo Start}}        % odd   page, left  position (inner) 
-\cehead[]{Zadanie A:\\Hello World!}
-\cohead[]{Zadanie A:\\Hello World!}
+\cehead[]{@@@problem_name@@@}
+\cohead[]{@@@problem_name@@@}
 \lehead[]{\includegraphics[width=15mm]{logo.png}} % equal page, left (outer) position
 \rohead[]{\includegraphics[width=15mm]{logo.png}}
 % definitions/configuration for the footer
@@ -38,14 +34,14 @@
 \hspace{50 mm}
 \newline
 
-\par{\Large \textbf{Zadanie A: Hello World!}} \\ \\
-Treść zadania\ldots
+\par{\Large \textbf{@@@problem_name@@@}} \\ \\
+@@@problem_statement@@@
 \\ \\
 \par{\Large \textbf{Format wejścia}} \\ \\
-Format wejścia\ldots
+@@@input_format@@@
 \\ \\
 \par{\Large \textbf{Format wyjścia}} \\ \\
-Format wyjścia\ldots
+@@@output_format@@@
 \\ \\
 \par{\Large \textbf{Przykład}} \\ \\
 \begin{tabular}{ p{7cm} p{7cm} }
@@ -53,20 +49,13 @@ Format wyjścia\ldots
 & \\
 
 % define input here
-1 \newline
-1 \newline
-1 \newline
-1 \newline
-1 \newline
-
+\begin{verbatim}@@@sample_input@@@\end{verbatim}
 &   
-% define output here
-2 \newline
-2 \newline
-2 \newline
-
+\begin{verbatim}@@@sample_output@@@\end{verbatim}
 \\
 
 \end{tabular}
+
+@@@sample_explanation@@@
 
 \end{document}

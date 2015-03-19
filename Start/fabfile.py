@@ -102,9 +102,10 @@ def test_solutions(path):
 def generate_pdf(path):
   print os.path.join('.', 'template', 'template.py')
   problem = import_module(os.path.join(path, 'problem.py'))
-  template = import_module(os.path.join('.', 'template', 'template.py'))
+  
+  template_file = os.path.join('.', 'template', 'template.tex')
+  with open(template_file) as f: document = f.read()
 
-  document = template.document_template
   problem_properties = [item for item in dir(problem) if not item.startswith("__")]
 
   for problem_property in problem_properties:
