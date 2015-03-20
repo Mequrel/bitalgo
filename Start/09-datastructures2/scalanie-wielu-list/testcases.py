@@ -58,6 +58,3 @@ def cases():
       for n in xrange(3*10**4)
     ]),
   ]
-
-def p():
-  print '\n\n'.join(cases())

@@ -4,7 +4,7 @@ difficulty = 'Moderate'
 problem_name = 'Scalanie wielu list'
 
 description = '''
-Zadanie pozwalajce zobaczy praktyczne zastosowanie kolejki priorytetowej.
+Zadanie pozwalajce zobaczyć praktyczne zastosowanie kolejki priorytetowej.
 '''
 
 problem_statement = '''
