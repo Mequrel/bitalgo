@@ -56,7 +56,7 @@ def generate_outputs(path):
   for input_file in input_files:
     number = input_file[-6:-4]
     output_file = os.path.join(output_directory, 'output' + number + '.txt')
-    local('{0} < {1} > {2}'.format(executable, input_file, output_file))
+    local('time {0} < {1} > {2}'.format(executable, input_file, output_file))
 
 def zip_testcases(path):
   with lcd(path):
