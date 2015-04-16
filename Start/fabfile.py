@@ -145,3 +145,25 @@ def clean(path):
 
   shutil.rmtree(os.path.join(path, 'input'))
   shutil.rmtree(os.path.join(path, 'output'))
+
+def convert_main_to_hackerrank(filename):
+  local('mkdir maintests')
+  local('unzip {0} -d ./maintests'.format(filename))
+  
+  with lcd('./maintests'):
+    local('mkdir input')
+    local('mkdir output')
+    
+  input_files = glob.glob(os.path.join('./maintests', '*.in'))
+
+  for i, input_file in enumerate(input_files):
+    output_file = input_file.replace('.in', '.out')
+
+    local('mv {0} ./maintests/input/input{1:0=2d}.txt'.format(input_file, i))
+    local('mv {0} ./maintests/output/output{1:0=2d}.txt'.format(output_file, i))
+
+  with lcd('./maintests'):
+    local('zip -u -r testcases.zip input output')
+    
+  local('mv ./maintests/testcases.zip ./')
+  local('rm -rf ./maintests')
